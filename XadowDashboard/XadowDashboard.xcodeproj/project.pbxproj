@@ -1,0 +1,572 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F4F62A8D18279E9E00D0F2D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F62A8C18279E9E00D0F2D0 /* Foundation.framework */; };
+		F4F62A8F18279E9E00D0F2D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F62A8E18279E9E00D0F2D0 /* CoreGraphics.framework */; };
+		F4F62A9118279E9E00D0F2D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F62A9018279E9E00D0F2D0 /* UIKit.framework */; };
+		F4F62A9718279E9E00D0F2D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4F62A9518279E9E00D0F2D0 /* InfoPlist.strings */; };
+		F4F62A9918279E9E00D0F2D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62A9818279E9E00D0F2D0 /* main.m */; };
+		F4F62A9D18279E9E00D0F2D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62A9C18279E9E00D0F2D0 /* AppDelegate.m */; };
+		F4F62AA018279E9E00D0F2D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F62A9E18279E9E00D0F2D0 /* Main.storyboard */; };
+		F4F62AA818279E9E00D0F2D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F62AA718279E9E00D0F2D0 /* Images.xcassets */; };
+		F4F62AAF18279E9E00D0F2D0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F62AAE18279E9E00D0F2D0 /* XCTest.framework */; };
+		F4F62AB018279E9E00D0F2D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F62A8C18279E9E00D0F2D0 /* Foundation.framework */; };
+		F4F62AB118279E9E00D0F2D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F62A9018279E9E00D0F2D0 /* UIKit.framework */; };
+		F4F62AB918279E9E00D0F2D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4F62AB718279E9E00D0F2D0 /* InfoPlist.strings */; };
+		F4F62ABB18279E9E00D0F2D0 /* XadowDashboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62ABA18279E9E00D0F2D0 /* XadowDashboardTests.m */; };
+		F4F62AC61827A01B00D0F2D0 /* UseCaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62AC51827A01B00D0F2D0 /* UseCaseViewController.m */; };
+		F4F62AC91827A2DF00D0F2D0 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62AC81827A2DF00D0F2D0 /* SettingsViewController.m */; };
+		F4F62ACC1827A37200D0F2D0 /* SettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62ACB1827A37200D0F2D0 /* SettingsCell.m */; };
+		F4F62ACF1827AB7C00D0F2D0 /* XadowSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62ACE1827AB7C00D0F2D0 /* XadowSettings.m */; };
+		F4F62AD21827ADD200D0F2D0 /* LEDToggleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62AD11827ADD200D0F2D0 /* LEDToggleViewController.m */; };
+		F4F62AD51827B4B100D0F2D0 /* XadowDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62AD41827B4B100D0F2D0 /* XadowDevice.m */; };
+		F4F62AD81827BDBD00D0F2D0 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F62AD71827BDBD00D0F2D0 /* CoreBluetooth.framework */; };
+		F4F62ADB1827C33900D0F2D0 /* XadowUART.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62ADA1827C33900D0F2D0 /* XadowUART.m */; };
+		F4F62ADE1827E0AE00D0F2D0 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62ADD1827E0AE00D0F2D0 /* ConnectionViewController.m */; };
+		F4F62AE11827EF7A00D0F2D0 /* ADCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = F4F62ADF1827EF7A00D0F2D0 /* ADCircularBuffer.c */; };
+		F4F62AE81828062500D0F2D0 /* XadowFirmata.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62AE71828062500D0F2D0 /* XadowFirmata.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F4F62AB218279E9E00D0F2D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4F62A8118279E9E00D0F2D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4F62A8818279E9E00D0F2D0;
+			remoteInfo = XadowDashboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F4F62A8918279E9E00D0F2D0 /* XadowDashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XadowDashboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4F62A8C18279E9E00D0F2D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F4F62A8E18279E9E00D0F2D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F4F62A9018279E9E00D0F2D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F4F62A9418279E9E00D0F2D0 /* XadowDashboard-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XadowDashboard-Info.plist"; sourceTree = "<group>"; };
+		F4F62A9618279E9E00D0F2D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F4F62A9818279E9E00D0F2D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F4F62A9A18279E9E00D0F2D0 /* XadowDashboard-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XadowDashboard-Prefix.pch"; sourceTree = "<group>"; };
+		F4F62A9B18279E9E00D0F2D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F4F62A9C18279E9E00D0F2D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F4F62A9F18279E9E00D0F2D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4F62AA718279E9E00D0F2D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F4F62AAD18279E9E00D0F2D0 /* XadowDashboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XadowDashboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4F62AAE18279E9E00D0F2D0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F4F62AB618279E9E00D0F2D0 /* XadowDashboardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XadowDashboardTests-Info.plist"; sourceTree = "<group>"; };
+		F4F62AB818279E9E00D0F2D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F4F62ABA18279E9E00D0F2D0 /* XadowDashboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XadowDashboardTests.m; sourceTree = "<group>"; };
+		F4F62AC41827A01B00D0F2D0 /* UseCaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UseCaseViewController.h; sourceTree = "<group>"; };
+		F4F62AC51827A01B00D0F2D0 /* UseCaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseCaseViewController.m; sourceTree = "<group>"; };
+		F4F62AC71827A2DF00D0F2D0 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		F4F62AC81827A2DF00D0F2D0 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		F4F62ACA1827A37200D0F2D0 /* SettingsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsCell.h; sourceTree = "<group>"; };
+		F4F62ACB1827A37200D0F2D0 /* SettingsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsCell.m; sourceTree = "<group>"; };
+		F4F62ACD1827AB7C00D0F2D0 /* XadowSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XadowSettings.h; sourceTree = "<group>"; };
+		F4F62ACE1827AB7C00D0F2D0 /* XadowSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XadowSettings.m; sourceTree = "<group>"; };
+		F4F62AD01827ADD200D0F2D0 /* LEDToggleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LEDToggleViewController.h; path = UseCases/LEDToggleViewController.h; sourceTree = "<group>"; };
+		F4F62AD11827ADD200D0F2D0 /* LEDToggleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LEDToggleViewController.m; path = UseCases/LEDToggleViewController.m; sourceTree = "<group>"; };
+		F4F62AD31827B4B100D0F2D0 /* XadowDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XadowDevice.h; sourceTree = "<group>"; };
+		F4F62AD41827B4B100D0F2D0 /* XadowDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XadowDevice.m; sourceTree = "<group>"; };
+		F4F62AD71827BDBD00D0F2D0 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		F4F62AD91827C33900D0F2D0 /* XadowUART.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XadowUART.h; sourceTree = "<group>"; };
+		F4F62ADA1827C33900D0F2D0 /* XadowUART.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XadowUART.m; sourceTree = "<group>"; };
+		F4F62ADC1827E0AE00D0F2D0 /* ConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionViewController.h; sourceTree = "<group>"; };
+		F4F62ADD1827E0AE00D0F2D0 /* ConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionViewController.m; sourceTree = "<group>"; };
+		F4F62ADF1827EF7A00D0F2D0 /* ADCircularBuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ADCircularBuffer.c; sourceTree = "<group>"; };
+		F4F62AE01827EF7A00D0F2D0 /* ADCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCircularBuffer.h; sourceTree = "<group>"; };
+		F4F62AE61828062500D0F2D0 /* XadowFirmata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XadowFirmata.h; sourceTree = "<group>"; };
+		F4F62AE71828062500D0F2D0 /* XadowFirmata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XadowFirmata.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4F62A8618279E9E00D0F2D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4F62AD81827BDBD00D0F2D0 /* CoreBluetooth.framework in Frameworks */,
+				F4F62A8F18279E9E00D0F2D0 /* CoreGraphics.framework in Frameworks */,
+				F4F62A9118279E9E00D0F2D0 /* UIKit.framework in Frameworks */,
+				F4F62A8D18279E9E00D0F2D0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4F62AAA18279E9E00D0F2D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4F62AAF18279E9E00D0F2D0 /* XCTest.framework in Frameworks */,
+				F4F62AB118279E9E00D0F2D0 /* UIKit.framework in Frameworks */,
+				F4F62AB018279E9E00D0F2D0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F4F62A8018279E9E00D0F2D0 = {
+			isa = PBXGroup;
+			children = (
+				F4F62A9218279E9E00D0F2D0 /* XadowDashboard */,
+				F4F62AB418279E9E00D0F2D0 /* XadowDashboardTests */,
+				F4F62A8B18279E9E00D0F2D0 /* Frameworks */,
+				F4F62A8A18279E9E00D0F2D0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F4F62A8A18279E9E00D0F2D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4F62A8918279E9E00D0F2D0 /* XadowDashboard.app */,
+				F4F62AAD18279E9E00D0F2D0 /* XadowDashboardTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4F62A8B18279E9E00D0F2D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4F62AD71827BDBD00D0F2D0 /* CoreBluetooth.framework */,
+				F4F62A8C18279E9E00D0F2D0 /* Foundation.framework */,
+				F4F62A8E18279E9E00D0F2D0 /* CoreGraphics.framework */,
+				F4F62A9018279E9E00D0F2D0 /* UIKit.framework */,
+				F4F62AAE18279E9E00D0F2D0 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4F62A9218279E9E00D0F2D0 /* XadowDashboard */ = {
+			isa = PBXGroup;
+			children = (
+				F4F62AE51828056400D0F2D0 /* Xadow */,
+				F4F62AE41828055400D0F2D0 /* Misc */,
+				F4F62AE31828054600D0F2D0 /* Views */,
+				F4F62AE21828052D00D0F2D0 /* Controllers */,
+				F4F62A9B18279E9E00D0F2D0 /* AppDelegate.h */,
+				F4F62A9C18279E9E00D0F2D0 /* AppDelegate.m */,
+				F4F62A9E18279E9E00D0F2D0 /* Main.storyboard */,
+				F4F62AA718279E9E00D0F2D0 /* Images.xcassets */,
+				F4F62A9318279E9E00D0F2D0 /* Supporting Files */,
+			);
+			path = XadowDashboard;
+			sourceTree = "<group>";
+		};
+		F4F62A9318279E9E00D0F2D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F4F62A9418279E9E00D0F2D0 /* XadowDashboard-Info.plist */,
+				F4F62A9518279E9E00D0F2D0 /* InfoPlist.strings */,
+				F4F62A9818279E9E00D0F2D0 /* main.m */,
+				F4F62A9A18279E9E00D0F2D0 /* XadowDashboard-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4F62AB418279E9E00D0F2D0 /* XadowDashboardTests */ = {
+			isa = PBXGroup;
+			children = (
+				F4F62ABA18279E9E00D0F2D0 /* XadowDashboardTests.m */,
+				F4F62AB518279E9E00D0F2D0 /* Supporting Files */,
+			);
+			path = XadowDashboardTests;
+			sourceTree = "<group>";
+		};
+		F4F62AB518279E9E00D0F2D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F4F62AB618279E9E00D0F2D0 /* XadowDashboardTests-Info.plist */,
+				F4F62AB718279E9E00D0F2D0 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4F62AE21828052D00D0F2D0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F4F62ADC1827E0AE00D0F2D0 /* ConnectionViewController.h */,
+				F4F62ADD1827E0AE00D0F2D0 /* ConnectionViewController.m */,
+				F4F62AD01827ADD200D0F2D0 /* LEDToggleViewController.h */,
+				F4F62AD11827ADD200D0F2D0 /* LEDToggleViewController.m */,
+				F4F62AC41827A01B00D0F2D0 /* UseCaseViewController.h */,
+				F4F62AC51827A01B00D0F2D0 /* UseCaseViewController.m */,
+				F4F62AC71827A2DF00D0F2D0 /* SettingsViewController.h */,
+				F4F62AC81827A2DF00D0F2D0 /* SettingsViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		F4F62AE31828054600D0F2D0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F4F62ACA1827A37200D0F2D0 /* SettingsCell.h */,
+				F4F62ACB1827A37200D0F2D0 /* SettingsCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F4F62AE41828055400D0F2D0 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				F4F62ADF1827EF7A00D0F2D0 /* ADCircularBuffer.c */,
+				F4F62AE01827EF7A00D0F2D0 /* ADCircularBuffer.h */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		F4F62AE51828056400D0F2D0 /* Xadow */ = {
+			isa = PBXGroup;
+			children = (
+				F4F62ACD1827AB7C00D0F2D0 /* XadowSettings.h */,
+				F4F62ACE1827AB7C00D0F2D0 /* XadowSettings.m */,
+				F4F62AD91827C33900D0F2D0 /* XadowUART.h */,
+				F4F62ADA1827C33900D0F2D0 /* XadowUART.m */,
+				F4F62AD31827B4B100D0F2D0 /* XadowDevice.h */,
+				F4F62AD41827B4B100D0F2D0 /* XadowDevice.m */,
+				F4F62AE61828062500D0F2D0 /* XadowFirmata.h */,
+				F4F62AE71828062500D0F2D0 /* XadowFirmata.m */,
+			);
+			name = Xadow;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4F62A8818279E9E00D0F2D0 /* XadowDashboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4F62ABE18279E9E00D0F2D0 /* Build configuration list for PBXNativeTarget "XadowDashboard" */;
+			buildPhases = (
+				F4F62A8518279E9E00D0F2D0 /* Sources */,
+				F4F62A8618279E9E00D0F2D0 /* Frameworks */,
+				F4F62A8718279E9E00D0F2D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XadowDashboard;
+			productName = XadowDashboard;
+			productReference = F4F62A8918279E9E00D0F2D0 /* XadowDashboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F4F62AAC18279E9E00D0F2D0 /* XadowDashboardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4F62AC118279E9E00D0F2D0 /* Build configuration list for PBXNativeTarget "XadowDashboardTests" */;
+			buildPhases = (
+				F4F62AA918279E9E00D0F2D0 /* Sources */,
+				F4F62AAA18279E9E00D0F2D0 /* Frameworks */,
+				F4F62AAB18279E9E00D0F2D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4F62AB318279E9E00D0F2D0 /* PBXTargetDependency */,
+			);
+			name = XadowDashboardTests;
+			productName = XadowDashboardTests;
+			productReference = F4F62AAD18279E9E00D0F2D0 /* XadowDashboardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4F62A8118279E9E00D0F2D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Fiore Basile";
+				TargetAttributes = {
+					F4F62A8818279E9E00D0F2D0 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					F4F62AAC18279E9E00D0F2D0 = {
+						TestTargetID = F4F62A8818279E9E00D0F2D0;
+					};
+				};
+			};
+			buildConfigurationList = F4F62A8418279E9E00D0F2D0 /* Build configuration list for PBXProject "XadowDashboard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4F62A8018279E9E00D0F2D0;
+			productRefGroup = F4F62A8A18279E9E00D0F2D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4F62A8818279E9E00D0F2D0 /* XadowDashboard */,
+				F4F62AAC18279E9E00D0F2D0 /* XadowDashboardTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4F62A8718279E9E00D0F2D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4F62AA818279E9E00D0F2D0 /* Images.xcassets in Resources */,
+				F4F62A9718279E9E00D0F2D0 /* InfoPlist.strings in Resources */,
+				F4F62AA018279E9E00D0F2D0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4F62AAB18279E9E00D0F2D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4F62AB918279E9E00D0F2D0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4F62A8518279E9E00D0F2D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4F62AC61827A01B00D0F2D0 /* UseCaseViewController.m in Sources */,
+				F4F62A9D18279E9E00D0F2D0 /* AppDelegate.m in Sources */,
+				F4F62ADE1827E0AE00D0F2D0 /* ConnectionViewController.m in Sources */,
+				F4F62ACF1827AB7C00D0F2D0 /* XadowSettings.m in Sources */,
+				F4F62AE81828062500D0F2D0 /* XadowFirmata.m in Sources */,
+				F4F62AD51827B4B100D0F2D0 /* XadowDevice.m in Sources */,
+				F4F62ADB1827C33900D0F2D0 /* XadowUART.m in Sources */,
+				F4F62A9918279E9E00D0F2D0 /* main.m in Sources */,
+				F4F62AC91827A2DF00D0F2D0 /* SettingsViewController.m in Sources */,
+				F4F62ACC1827A37200D0F2D0 /* SettingsCell.m in Sources */,
+				F4F62AD21827ADD200D0F2D0 /* LEDToggleViewController.m in Sources */,
+				F4F62AE11827EF7A00D0F2D0 /* ADCircularBuffer.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4F62AA918279E9E00D0F2D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4F62ABB18279E9E00D0F2D0 /* XadowDashboardTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F4F62AB318279E9E00D0F2D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4F62A8818279E9E00D0F2D0 /* XadowDashboard */;
+			targetProxy = F4F62AB218279E9E00D0F2D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F4F62A9518279E9E00D0F2D0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4F62A9618279E9E00D0F2D0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F4F62A9E18279E9E00D0F2D0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4F62A9F18279E9E00D0F2D0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F4F62AB718279E9E00D0F2D0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4F62AB818279E9E00D0F2D0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F4F62ABC18279E9E00D0F2D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F4F62ABD18279E9E00D0F2D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F4F62ABF18279E9E00D0F2D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XadowDashboard/XadowDashboard-Prefix.pch";
+				INFOPLIST_FILE = "XadowDashboard/XadowDashboard-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F4F62AC018279E9E00D0F2D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XadowDashboard/XadowDashboard-Prefix.pch";
+				INFOPLIST_FILE = "XadowDashboard/XadowDashboard-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F4F62AC218279E9E00D0F2D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/XadowDashboard.app/XadowDashboard";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XadowDashboard/XadowDashboard-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "XadowDashboardTests/XadowDashboardTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		F4F62AC318279E9E00D0F2D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/XadowDashboard.app/XadowDashboard";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XadowDashboard/XadowDashboard-Prefix.pch";
+				INFOPLIST_FILE = "XadowDashboardTests/XadowDashboardTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4F62A8418279E9E00D0F2D0 /* Build configuration list for PBXProject "XadowDashboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4F62ABC18279E9E00D0F2D0 /* Debug */,
+				F4F62ABD18279E9E00D0F2D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4F62ABE18279E9E00D0F2D0 /* Build configuration list for PBXNativeTarget "XadowDashboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4F62ABF18279E9E00D0F2D0 /* Debug */,
+				F4F62AC018279E9E00D0F2D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F4F62AC118279E9E00D0F2D0 /* Build configuration list for PBXNativeTarget "XadowDashboardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4F62AC218279E9E00D0F2D0 /* Debug */,
+				F4F62AC318279E9E00D0F2D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4F62A8118279E9E00D0F2D0 /* Project object */;
+}
