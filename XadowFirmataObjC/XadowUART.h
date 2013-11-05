@@ -32,7 +32,7 @@
 
 -(uint8_t)read;
 -(int)available;
--(void)write:(uint8_t)byte;
+-(void)write:(uint8_t*)bytes length:(int)len;
 
 -(void)reset;
 -(void)start;

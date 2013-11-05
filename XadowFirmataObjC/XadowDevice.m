@@ -31,10 +31,13 @@ static XadowDevice* _xadow;
                               , nil];
         
         self.canScan = NO;
+        self.delegate=nil;
+        dispatch_queue_t queue = dispatch_queue_create("xadow.central.queue", DISPATCH_QUEUE_CONCURRENT);
+        
         NSLog(@"Central Manager init");
         self.connectedServices = [NSMutableArray array];
         self.foundPeripherals = [NSMutableArray array];
-        self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:opts];
+        self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:queue options:opts];
     }
     return self;
 }
@@ -57,7 +60,9 @@ static XadowDevice* _xadow;
 
 -(void)notifyDelegate {
     if (self.delegate){
-        [self.delegate xadowDidRefreshBLE:self];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.delegate xadowDidRefreshBLE:self];
+        });
     }
 }
 
@@ -189,7 +194,7 @@ static XadowDevice* _xadow;
     } else if (central.state <= CBCentralManagerStatePoweredOff ) {
              [self clearDevices];
             // cbcentral manager is not ready or not available
-            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"This device doesn't support BLE, or app is not authorized to use it" delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"This device doesn't support BLE, or app is not authorized to use it" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
             [alert show];
         
     }
@@ -229,6 +234,9 @@ static XadowDevice* _xadow;
     
     NSLog(@"Did discover peripheral %@", peripheral);
     
+    
+ 
+    
     if (![self.foundPeripherals containsObject:peripheral]) {
         [self.foundPeripherals addObject:peripheral];
         [self notifyDelegate];
@@ -248,6 +256,9 @@ static XadowDevice* _xadow;
 
 -(void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
 
+    
+    [self stopScanning];
+    
     [self saveDeviceWithIdentifier:peripheral.identifier];
 
     NSLog(@"xadow connected");

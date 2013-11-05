@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  XadowDashboard
+//  XadowFirmataTest
 //
-//  Created by fiore on 04/11/13.
+//  Created by fiore on 05/11/13.
 //  Copyright (c) 2013 Fiore Basile. All rights reserved.
 //
 
@@ -16,7 +16,6 @@
     
     [XadowDevice shared];
     // Override point for customization after application launch.
-    
     return YES;
 }
 							

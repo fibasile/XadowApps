@@ -7,9 +7,12 @@
 //
 
 #import "LEDToggleViewController.h"
+#import "XadowDevice.h"
+#import "XadowFirmata.h"
+
 
 @interface LEDToggleViewController ()
-
+@property (nonatomic,retain) XadowFirmata* firmata;
 @end
 
 @implementation LEDToggleViewController
@@ -30,7 +33,28 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-       [self updateStatus];
+    
+    XadowUART* uart = [[XadowDevice shared] uart];
+    
+    if (uart!=nil){
+    
+        self.firmata = [[XadowFirmata alloc] initWithUART:uart];
+        [self.firmata startLoop];
+        [self.firmata queryLED:^(BOOL enabled){
+            self.ledStatus = enabled;
+            [self updateStatus];
+        }];
+        
+        
+    }
+}
+
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    if (self.firmata)
+        [self.firmata stopLoop];
+    self.firmata = nil;
 }
 
 
@@ -61,6 +85,7 @@
     
     self.ledStatus = !self.ledStatus;
     [self updateStatus];
+    [self.firmata toggleLED:self.ledStatus];
     
 }
 @end

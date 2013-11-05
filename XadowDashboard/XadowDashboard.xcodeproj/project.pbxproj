@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F439E9151829419D00314986 /* ADCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = F439E9131829419D00314986 /* ADCircularBuffer.c */; };
+		F439E9181829495D00314986 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F439E9171829495D00314986 /* DisplayViewController.m */; };
+		F439E91B1829496E00314986 /* BatteryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F439E91A1829496E00314986 /* BatteryViewController.m */; };
+		F4616EF5182900F100E12D90 /* XadowDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = F4616EF0182900F100E12D90 /* XadowDevice.m */; };
+		F4616EF6182900F100E12D90 /* XadowFirmata.m in Sources */ = {isa = PBXBuildFile; fileRef = F4616EF2182900F100E12D90 /* XadowFirmata.m */; };
+		F4616EF7182900F100E12D90 /* XadowUART.m in Sources */ = {isa = PBXBuildFile; fileRef = F4616EF4182900F100E12D90 /* XadowUART.m */; };
 		F4F62A8D18279E9E00D0F2D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F62A8C18279E9E00D0F2D0 /* Foundation.framework */; };
 		F4F62A8F18279E9E00D0F2D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F62A8E18279E9E00D0F2D0 /* CoreGraphics.framework */; };
 		F4F62A9118279E9E00D0F2D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F62A9018279E9E00D0F2D0 /* UIKit.framework */; };
@@ -25,12 +31,8 @@
 		F4F62ACC1827A37200D0F2D0 /* SettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62ACB1827A37200D0F2D0 /* SettingsCell.m */; };
 		F4F62ACF1827AB7C00D0F2D0 /* XadowSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62ACE1827AB7C00D0F2D0 /* XadowSettings.m */; };
 		F4F62AD21827ADD200D0F2D0 /* LEDToggleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62AD11827ADD200D0F2D0 /* LEDToggleViewController.m */; };
-		F4F62AD51827B4B100D0F2D0 /* XadowDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62AD41827B4B100D0F2D0 /* XadowDevice.m */; };
 		F4F62AD81827BDBD00D0F2D0 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F62AD71827BDBD00D0F2D0 /* CoreBluetooth.framework */; };
-		F4F62ADB1827C33900D0F2D0 /* XadowUART.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62ADA1827C33900D0F2D0 /* XadowUART.m */; };
 		F4F62ADE1827E0AE00D0F2D0 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62ADD1827E0AE00D0F2D0 /* ConnectionViewController.m */; };
-		F4F62AE11827EF7A00D0F2D0 /* ADCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = F4F62ADF1827EF7A00D0F2D0 /* ADCircularBuffer.c */; };
-		F4F62AE81828062500D0F2D0 /* XadowFirmata.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F62AE71828062500D0F2D0 /* XadowFirmata.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F439E9131829419D00314986 /* ADCircularBuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ADCircularBuffer.c; path = ../../XadowFirmataObjC/ADCircularBuffer.c; sourceTree = "<group>"; };
+		F439E9141829419D00314986 /* ADCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADCircularBuffer.h; path = ../../XadowFirmataObjC/ADCircularBuffer.h; sourceTree = "<group>"; };
+		F439E9161829495D00314986 /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisplayViewController.h; path = UseCases/DisplayViewController.h; sourceTree = "<group>"; };
+		F439E9171829495D00314986 /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisplayViewController.m; path = UseCases/DisplayViewController.m; sourceTree = "<group>"; };
+		F439E9191829496E00314986 /* BatteryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BatteryViewController.h; path = UseCases/BatteryViewController.h; sourceTree = "<group>"; };
+		F439E91A1829496E00314986 /* BatteryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BatteryViewController.m; path = UseCases/BatteryViewController.m; sourceTree = "<group>"; };
+		F4616EEF182900F100E12D90 /* XadowDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XadowDevice.h; path = ../../XadowFirmataObjC/XadowDevice.h; sourceTree = "<group>"; };
+		F4616EF0182900F100E12D90 /* XadowDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XadowDevice.m; path = ../../XadowFirmataObjC/XadowDevice.m; sourceTree = "<group>"; };
+		F4616EF1182900F100E12D90 /* XadowFirmata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XadowFirmata.h; path = ../../XadowFirmataObjC/XadowFirmata.h; sourceTree = "<group>"; };
+		F4616EF2182900F100E12D90 /* XadowFirmata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XadowFirmata.m; path = ../../XadowFirmataObjC/XadowFirmata.m; sourceTree = "<group>"; };
+		F4616EF3182900F100E12D90 /* XadowUART.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XadowUART.h; path = ../../XadowFirmataObjC/XadowUART.h; sourceTree = "<group>"; };
+		F4616EF4182900F100E12D90 /* XadowUART.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XadowUART.m; path = ../../XadowFirmataObjC/XadowUART.m; sourceTree = "<group>"; };
 		F4F62A8918279E9E00D0F2D0 /* XadowDashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XadowDashboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F62A8C18279E9E00D0F2D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F4F62A8E18279E9E00D0F2D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,17 +85,9 @@
 		F4F62ACE1827AB7C00D0F2D0 /* XadowSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XadowSettings.m; sourceTree = "<group>"; };
 		F4F62AD01827ADD200D0F2D0 /* LEDToggleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LEDToggleViewController.h; path = UseCases/LEDToggleViewController.h; sourceTree = "<group>"; };
 		F4F62AD11827ADD200D0F2D0 /* LEDToggleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LEDToggleViewController.m; path = UseCases/LEDToggleViewController.m; sourceTree = "<group>"; };
-		F4F62AD31827B4B100D0F2D0 /* XadowDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XadowDevice.h; sourceTree = "<group>"; };
-		F4F62AD41827B4B100D0F2D0 /* XadowDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XadowDevice.m; sourceTree = "<group>"; };
 		F4F62AD71827BDBD00D0F2D0 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		F4F62AD91827C33900D0F2D0 /* XadowUART.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XadowUART.h; sourceTree = "<group>"; };
-		F4F62ADA1827C33900D0F2D0 /* XadowUART.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XadowUART.m; sourceTree = "<group>"; };
 		F4F62ADC1827E0AE00D0F2D0 /* ConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionViewController.h; sourceTree = "<group>"; };
 		F4F62ADD1827E0AE00D0F2D0 /* ConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionViewController.m; sourceTree = "<group>"; };
-		F4F62ADF1827EF7A00D0F2D0 /* ADCircularBuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ADCircularBuffer.c; sourceTree = "<group>"; };
-		F4F62AE01827EF7A00D0F2D0 /* ADCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCircularBuffer.h; sourceTree = "<group>"; };
-		F4F62AE61828062500D0F2D0 /* XadowFirmata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XadowFirmata.h; sourceTree = "<group>"; };
-		F4F62AE71828062500D0F2D0 /* XadowFirmata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XadowFirmata.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F439E91C1829499C00314986 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F439E9161829495D00314986 /* DisplayViewController.h */,
+				F439E9171829495D00314986 /* DisplayViewController.m */,
+				F439E9191829496E00314986 /* BatteryViewController.h */,
+				F439E91A1829496E00314986 /* BatteryViewController.m */,
+				F4F62AD01827ADD200D0F2D0 /* LEDToggleViewController.h */,
+				F4F62AD11827ADD200D0F2D0 /* LEDToggleViewController.m */,
+			);
+			name = UseCases;
+			sourceTree = "<group>";
+		};
 		F4F62A8018279E9E00D0F2D0 = {
 			isa = PBXGroup;
 			children = (
@@ -188,10 +207,9 @@
 		F4F62AE21828052D00D0F2D0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F439E91C1829499C00314986 /* UseCases */,
 				F4F62ADC1827E0AE00D0F2D0 /* ConnectionViewController.h */,
 				F4F62ADD1827E0AE00D0F2D0 /* ConnectionViewController.m */,
-				F4F62AD01827ADD200D0F2D0 /* LEDToggleViewController.h */,
-				F4F62AD11827ADD200D0F2D0 /* LEDToggleViewController.m */,
 				F4F62AC41827A01B00D0F2D0 /* UseCaseViewController.h */,
 				F4F62AC51827A01B00D0F2D0 /* UseCaseViewController.m */,
 				F4F62AC71827A2DF00D0F2D0 /* SettingsViewController.h */,
@@ -212,8 +230,8 @@
 		F4F62AE41828055400D0F2D0 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				F4F62ADF1827EF7A00D0F2D0 /* ADCircularBuffer.c */,
-				F4F62AE01827EF7A00D0F2D0 /* ADCircularBuffer.h */,
+				F4F62ACD1827AB7C00D0F2D0 /* XadowSettings.h */,
+				F4F62ACE1827AB7C00D0F2D0 /* XadowSettings.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -221,14 +239,14 @@
 		F4F62AE51828056400D0F2D0 /* Xadow */ = {
 			isa = PBXGroup;
 			children = (
-				F4F62ACD1827AB7C00D0F2D0 /* XadowSettings.h */,
-				F4F62ACE1827AB7C00D0F2D0 /* XadowSettings.m */,
-				F4F62AD91827C33900D0F2D0 /* XadowUART.h */,
-				F4F62ADA1827C33900D0F2D0 /* XadowUART.m */,
-				F4F62AD31827B4B100D0F2D0 /* XadowDevice.h */,
-				F4F62AD41827B4B100D0F2D0 /* XadowDevice.m */,
-				F4F62AE61828062500D0F2D0 /* XadowFirmata.h */,
-				F4F62AE71828062500D0F2D0 /* XadowFirmata.m */,
+				F439E9131829419D00314986 /* ADCircularBuffer.c */,
+				F439E9141829419D00314986 /* ADCircularBuffer.h */,
+				F4616EEF182900F100E12D90 /* XadowDevice.h */,
+				F4616EF0182900F100E12D90 /* XadowDevice.m */,
+				F4616EF1182900F100E12D90 /* XadowFirmata.h */,
+				F4616EF2182900F100E12D90 /* XadowFirmata.m */,
+				F4616EF3182900F100E12D90 /* XadowUART.h */,
+				F4616EF4182900F100E12D90 /* XadowUART.m */,
 			);
 			name = Xadow;
 			sourceTree = "<group>";
@@ -338,17 +356,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4F62AC61827A01B00D0F2D0 /* UseCaseViewController.m in Sources */,
+				F4616EF7182900F100E12D90 /* XadowUART.m in Sources */,
 				F4F62A9D18279E9E00D0F2D0 /* AppDelegate.m in Sources */,
 				F4F62ADE1827E0AE00D0F2D0 /* ConnectionViewController.m in Sources */,
 				F4F62ACF1827AB7C00D0F2D0 /* XadowSettings.m in Sources */,
-				F4F62AE81828062500D0F2D0 /* XadowFirmata.m in Sources */,
-				F4F62AD51827B4B100D0F2D0 /* XadowDevice.m in Sources */,
-				F4F62ADB1827C33900D0F2D0 /* XadowUART.m in Sources */,
 				F4F62A9918279E9E00D0F2D0 /* main.m in Sources */,
 				F4F62AC91827A2DF00D0F2D0 /* SettingsViewController.m in Sources */,
+				F4616EF6182900F100E12D90 /* XadowFirmata.m in Sources */,
+				F439E91B1829496E00314986 /* BatteryViewController.m in Sources */,
 				F4F62ACC1827A37200D0F2D0 /* SettingsCell.m in Sources */,
+				F4616EF5182900F100E12D90 /* XadowDevice.m in Sources */,
 				F4F62AD21827ADD200D0F2D0 /* LEDToggleViewController.m in Sources */,
-				F4F62AE11827EF7A00D0F2D0 /* ADCircularBuffer.c in Sources */,
+				F439E9151829419D00314986 /* ADCircularBuffer.c in Sources */,
+				F439E9181829495D00314986 /* DisplayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +577,7 @@
 				F4F62AC018279E9E00D0F2D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4F62AC118279E9E00D0F2D0 /* Build configuration list for PBXNativeTarget "XadowDashboardTests" */ = {
 			isa = XCConfigurationList;
@@ -565,6 +586,7 @@
 				F4F62AC318279E9E00D0F2D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

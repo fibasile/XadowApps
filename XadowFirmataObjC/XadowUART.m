@@ -35,18 +35,29 @@
 
 -(int)available {
     // check circular buffer
-    return !ADCircularBufferIsEmpty(&buffer);
+    BOOL avail =  !ADCircularBufferIsEmpty(&buffer);
+
+    return avail;
 }
 
--(void)write:(uint8_t)byte {    
+-(void)write:(uint8_t*)bytes length:(int)len {
     if (self.cbReadWriteCharacteristic){
-        NSData* data = [NSData dataWithBytes:&byte length:1];
-        [self.device writeValue:data forCharacteristic:self.cbReadWriteCharacteristic type:CBCharacteristicWriteWithoutResponse];
-        self.writeCount++;
+        if (len <= 16) {
+            NSData* data = [NSData dataWithBytes:bytes length:len];
+            [self.device writeValue:data forCharacteristic:self.cbReadWriteCharacteristic type:CBCharacteristicWriteWithResponse];
+            self.writeCount+= len;
+            NSLog(@"Wrote %@",data);
+        } else {
+            // send data in batches
+            [self write:bytes length:16];
+            [self write:bytes+16 length:len-16];
+            
+        }
     }
 }
 
 -(void)appendBuffer:(uint8_t)byte{
+    NSLog(@"append %02x", byte);
     // write to the tx characteritistic
     ElemType elem;
     elem.value =byte;
@@ -158,21 +169,42 @@
     
 }
 
--(void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
+-(void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
+    if (error){
+        NSLog(@"ERror writing value for characteristic %@: %@", characteristic, error.description);
+        return;
+    }
+    NSLog(@"Wrote value for characteristic %@", characteristic);
     
+}
+
+-(void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
+    if(error){
+        NSLog(@"notification state updated for characteristic %@ with error: %@",characteristic,error);
+    }else{
+        NSLog(@"notification state updated for characteristic %@",characteristic);
+    }
 }
 
 -(void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
         // append to the circular buffer
+    
+    if (error){
+        NSLog(@"Error receiving value for characteristic %@: %@", characteristic, error.description);
+        return;
+    }
+
     if([characteristic.UUID.data isEqual:self.writeNotifyUUID.data]){
+        NSLog(@"Received value for characteristic %@", characteristic.UUID);
      
         NSData* data = characteristic.value;
         self.readCount+=data.length;
+        uint8_t* buff = malloc(sizeof(uint8_t) * data.length);
+        [data getBytes:buff length:data.length];
         for (int i=0;i<data.length;i++){
-            uint8_t byte;
-            [data getBytes:&byte length:1];
-            [self appendBuffer:byte];
+            [self appendBuffer:buff[i]];
         }
+        free(buff);
     
     }
     

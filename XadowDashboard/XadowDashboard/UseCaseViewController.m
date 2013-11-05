@@ -78,7 +78,12 @@
         case 0:
             [self performSegueWithIdentifier:@"SegueForLED" sender:self];
             break;
-            
+        case 1:
+            [self performSegueWithIdentifier:@"SegueForDisplay" sender:self];
+            break;
+        case 4:
+            [self performSegueWithIdentifier:@"SegueForBattery" sender:self];
+            break;
         default:
             break;
     }
