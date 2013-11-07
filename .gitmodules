@@ -1,0 +1,3 @@
+[submodule "deps/xadow"]
+	path = deps/xadow
+	url = git@github.com:fibasile/xadow.git
