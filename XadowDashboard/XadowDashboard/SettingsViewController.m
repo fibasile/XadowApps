@@ -138,7 +138,7 @@
 
 - (IBAction)moduleAvailableAction:(id)sender {
     
-    int tag = [(UISwitch*)sender tag];
+    long int tag = [(UISwitch*)sender tag];
     
     NSString* key = [[[XadowSettings shared] keys] objectAtIndex:tag];
     NSNumber* val = [[XadowSettings shared].settings objectForKey:key];

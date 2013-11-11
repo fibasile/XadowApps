@@ -24,7 +24,7 @@
 }
 
 -(void)awakeFromNib {
-    self.useCases = [NSMutableArray arrayWithObjects:@"Led",@"Display",@"Accelerometer",@"GPS",@"Battery",nil];
+    self.useCases = [NSMutableArray arrayWithObjects:@"Led",@"Display",@"Accelerometer",@"RTC",@"Battery",nil];
     [self.tableView reloadData];
 }
 
@@ -80,6 +80,12 @@
             break;
         case 1:
             [self performSegueWithIdentifier:@"SegueForDisplay" sender:self];
+            break;
+        case 2:
+            [self performSegueWithIdentifier:@"SegueForAccelerometer" sender:self];
+            break;
+        case 3:
+            [self performSegueWithIdentifier:@"SegueForRTC" sender:self];
             break;
         case 4:
             [self performSegueWithIdentifier:@"SegueForBattery" sender:self];

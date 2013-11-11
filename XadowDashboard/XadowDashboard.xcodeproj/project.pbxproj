@@ -10,6 +10,8 @@
 		F439E9151829419D00314986 /* ADCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = F439E9131829419D00314986 /* ADCircularBuffer.c */; };
 		F439E9181829495D00314986 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F439E9171829495D00314986 /* DisplayViewController.m */; };
 		F439E91B1829496E00314986 /* BatteryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F439E91A1829496E00314986 /* BatteryViewController.m */; };
+		F45C64BA1831383400C657EA /* AccelerometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F45C64B91831383400C657EA /* AccelerometerViewController.m */; };
+		F45C64BD1831386300C657EA /* RTCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F45C64BC1831386300C657EA /* RTCViewController.m */; };
 		F4616EF5182900F100E12D90 /* XadowDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = F4616EF0182900F100E12D90 /* XadowDevice.m */; };
 		F4616EF6182900F100E12D90 /* XadowFirmata.m in Sources */ = {isa = PBXBuildFile; fileRef = F4616EF2182900F100E12D90 /* XadowFirmata.m */; };
 		F4616EF7182900F100E12D90 /* XadowUART.m in Sources */ = {isa = PBXBuildFile; fileRef = F4616EF4182900F100E12D90 /* XadowUART.m */; };
@@ -52,6 +54,10 @@
 		F439E9171829495D00314986 /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisplayViewController.m; path = UseCases/DisplayViewController.m; sourceTree = "<group>"; };
 		F439E9191829496E00314986 /* BatteryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BatteryViewController.h; path = UseCases/BatteryViewController.h; sourceTree = "<group>"; };
 		F439E91A1829496E00314986 /* BatteryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BatteryViewController.m; path = UseCases/BatteryViewController.m; sourceTree = "<group>"; };
+		F45C64B81831383400C657EA /* AccelerometerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccelerometerViewController.h; path = UseCases/AccelerometerViewController.h; sourceTree = "<group>"; };
+		F45C64B91831383400C657EA /* AccelerometerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccelerometerViewController.m; path = UseCases/AccelerometerViewController.m; sourceTree = "<group>"; };
+		F45C64BB1831386300C657EA /* RTCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTCViewController.h; path = UseCases/RTCViewController.h; sourceTree = "<group>"; };
+		F45C64BC1831386300C657EA /* RTCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTCViewController.m; path = UseCases/RTCViewController.m; sourceTree = "<group>"; };
 		F4616EEF182900F100E12D90 /* XadowDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XadowDevice.h; path = ../../XadowFirmataObjC/XadowDevice.h; sourceTree = "<group>"; };
 		F4616EF0182900F100E12D90 /* XadowDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XadowDevice.m; path = ../../XadowFirmataObjC/XadowDevice.m; sourceTree = "<group>"; };
 		F4616EF1182900F100E12D90 /* XadowFirmata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XadowFirmata.h; path = ../../XadowFirmataObjC/XadowFirmata.h; sourceTree = "<group>"; };
@@ -124,6 +130,10 @@
 				F439E91A1829496E00314986 /* BatteryViewController.m */,
 				F4F62AD01827ADD200D0F2D0 /* LEDToggleViewController.h */,
 				F4F62AD11827ADD200D0F2D0 /* LEDToggleViewController.m */,
+				F45C64B81831383400C657EA /* AccelerometerViewController.h */,
+				F45C64B91831383400C657EA /* AccelerometerViewController.m */,
+				F45C64BB1831386300C657EA /* RTCViewController.h */,
+				F45C64BC1831386300C657EA /* RTCViewController.m */,
 			);
 			name = UseCases;
 			sourceTree = "<group>";
@@ -358,8 +368,10 @@
 				F4F62AC61827A01B00D0F2D0 /* UseCaseViewController.m in Sources */,
 				F4616EF7182900F100E12D90 /* XadowUART.m in Sources */,
 				F4F62A9D18279E9E00D0F2D0 /* AppDelegate.m in Sources */,
+				F45C64BA1831383400C657EA /* AccelerometerViewController.m in Sources */,
 				F4F62ADE1827E0AE00D0F2D0 /* ConnectionViewController.m in Sources */,
 				F4F62ACF1827AB7C00D0F2D0 /* XadowSettings.m in Sources */,
+				F45C64BD1831386300C657EA /* RTCViewController.m in Sources */,
 				F4F62A9918279E9E00D0F2D0 /* main.m in Sources */,
 				F4F62AC91827A2DF00D0F2D0 /* SettingsViewController.m in Sources */,
 				F4616EF6182900F100E12D90 /* XadowFirmata.m in Sources */,

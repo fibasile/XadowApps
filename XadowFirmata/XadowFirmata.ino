@@ -14,14 +14,77 @@ static byte QUERY_BATTERY=0x05;
 static byte TOGGLE_ACCEL=0x06;
 static byte REPORT_ACCEL=0x07;
 static byte REPORT_ACCEL_EVT=0x08;
-
+static byte SET_TIME=0x09;
+static byte DISPLAY_TIME=0x10;
 
 
 int error=0;
 int n=0;
 int greenLed =0;
-int enableAccelerometer=1;
+int enableAccelerometer=0;
 ADXL345 adxl;
+
+
+#define ADDRRTC         0x68
+
+// day of week 
+#define MON 1
+#define TUE 2
+#define WED 3
+#define THU 4
+#define FRI 5
+#define SAT 6
+#define SUN 7
+
+unsigned char decToBcd(unsigned char val)
+{
+    return ( (val/10*16) + (val%10) );
+}
+
+
+unsigned char bcdToDec(unsigned char val)
+{
+    return ( (val/16*10) + (val%16) );
+}
+
+
+// time format is 
+// year, month ,day, day_of_week, hour, minute, second
+unsigned char setTime(unsigned char *dta)
+{
+
+    Wire.beginTransmission(ADDRRTC);
+    Wire.write((unsigned char)0x00);
+    Wire.write(decToBcd(dta[6]));           // 0 to bit 7 starts the clock
+    Wire.write(decToBcd(dta[5]));
+    Wire.write(decToBcd(dta[4]));           // If you want 12 hour am/pm you need to set bit 6
+    Wire.write(decToBcd(dta[3]));
+    Wire.write(decToBcd(dta[2]));
+    Wire.write(decToBcd(dta[1]));
+    Wire.write(decToBcd(dta[0]));
+    Wire.endTransmission();
+
+    return 1;
+}
+
+unsigned char getTime(unsigned char *dta)
+{
+    // Reset the register pointer
+    Wire.beginTransmission(ADDRRTC);
+    Wire.write((unsigned char)0x00);
+    Wire.endTransmission();
+    Wire.requestFrom(ADDRRTC, 7);
+    // A few of these need masks because certain bits are control bits
+    dta[6]  = bcdToDec(Wire.read());
+    dta[5]  = bcdToDec(Wire.read());
+    dta[4]  = bcdToDec(Wire.read());                // Need to change this if 12 hour am/pm
+    dta[3]  = bcdToDec(Wire.read());
+    dta[2]  = bcdToDec(Wire.read());
+    dta[1]  = bcdToDec(Wire.read());
+    dta[0]  = bcdToDec(Wire.read());
+
+    return 1;
+}
 
 void TESTIO(void)
 {
@@ -165,35 +228,44 @@ void queryAccelerometer(){
     if(adxl.triggered(interrupts, ADXL345_FREE_FALL)){
      Serial.println("freefall");
      //add code here to do when freefall is sensed
+     sendAccelerometerEvent(ADXL345_FREE_FALL);
     } 
  
     //inactivity
     if(adxl.triggered(interrupts, ADXL345_INACTIVITY)){
      Serial.println("inactivity");
      //add code here to do when inactivity is sensed
+     sendAccelerometerEvent(ADXL345_INACTIVITY);
     }
  
     //activity
     if(adxl.triggered(interrupts, ADXL345_ACTIVITY)){
      Serial.println("activity"); 
      //add code here to do when activity is sensed
+     sendAccelerometerEvent(ADXL345_ACTIVITY);
     }
  
     //double tap
     if(adxl.triggered(interrupts, ADXL345_DOUBLE_TAP)){
      Serial.println("double tap");
      //add code here to do when a 2X tap is sensed
+     sendAccelerometerEvent(ADXL345_ACTIVITY);
     }
  
     //tap
     if(adxl.triggered(interrupts, ADXL345_SINGLE_TAP)){
      Serial.println("tap");
      //add code here to do when a tap is sensed
+     sendAccelerometerEvent(ADXL345_SINGLE_TAP);
     } 
 	
 }
 
-
+void sendAccelerometerEvent(byte event){
+  byte val[1];
+  val[0] = event;
+   Firmata.sendSysex(REPORT_ACCEL_EVT, 0x01, val);
+}
 
 void initDisplay(){
    SeeedOled.init();  //initialze SEEED OLED display
@@ -218,6 +290,44 @@ void updateDisplay(int argc, char* text){
     for (int i=0;i<argc;i++)
     SeeedOled.putChar(text[i]);
       
+}
+
+void displayTime(){
+    unsigned char* td = (unsigned char*) malloc(sizeof(unsigned char)*7);
+    getTime(td);
+    cout << "20" << td[0] << '/' << td[1] << '/' << td[2] << tabl;
+    cout << td[4] << ":" << td[5] << ":" << td[6] << endl;
+
+    String dateString;
+    dateString += "20";
+    dateString += td[0];
+    dateString += "/";
+    dateString += td[1];
+    dateString += "/";
+    dateString += td[2];
+     
+    String timeString;
+    
+    if (td[4] < 10) timeString +="0";
+    timeString += td[4];
+    timeString += ":";
+    if (td[5] < 10) timeString +="0";
+    timeString += td[5];
+    timeString += ":";
+
+    if (td[5] < 10) timeString +="0";
+    timeString += td[5];
+
+  
+    SeeedOled.clearDisplay();          //clear the screen and set start position to top left corner
+    SeeedOled.setNormalDisplay();      //Set display to normal mode (i.e non-inverse mode)
+    SeeedOled.setPageMode();           //Set addressing mode to Page Mode
+    SeeedOled.setTextXY(0,0);
+    SeeedOled.putString(dateString.c_str());
+    SeeedOled.setTextXY(2,0);
+    SeeedOled.putString(timeString.c_str());
+    
+    free(td);
 }
 
 
@@ -246,10 +356,20 @@ void sysexCallback(byte command, byte argc, byte *argv){
 //          Serial.println("Update display");
           updateDisplay(argc,(char*)argv);
         } else if (command == QUERY_BATTERY) {
-           float val[2];
-           val[1]=Xadow.getBatVol();
+           byte val[2];
+           val[1]=Xadow.getBatVol()*10;
            val[0]=Xadow.getChrgState();
+           Serial.println(val[1]);
            Firmata.sendSysex(QUERY_BATTERY, 0x02, (byte*) val);
+        } else if (command == SET_TIME) {
+           unsigned char* time = (unsigned char*)argv;
+           setTime(time);
+        } else if (command == REPORT_ACCEL) {
+           
+          reportAccelerometer(argv[0]);
+           
+        } else if (command == DISPLAY_TIME) {
+           displayTime(); 
         }
 
 
@@ -258,18 +378,18 @@ void sysexCallback(byte command, byte argc, byte *argv){
 
 void setup(){
         Serial.begin(57600);
-        while(!Serial);
+//        while(!Serial);
         Serial.println("Setup done");
-	    Xadow.init();
-		Wire.begin();
-		initAccelerometer();
+	Xadow.init();
+	Wire.begin();
+	initAccelerometer();
         initDisplay();
         Stream& the_serial = Serial1;
-		initBleSerial();
+	initBleSerial();
         initIO();
-		Firmata.setFirmwareVersion(0,1);
-		Firmata.attach(START_SYSEX, sysexCallback);
-		Firmata.begin();
+	Firmata.setFirmwareVersion(0,1);
+	Firmata.attach(START_SYSEX, sysexCallback);
+	Firmata.begin();
         //battery stuff
         analogReference(INTERNAL);
         analogRead(4);

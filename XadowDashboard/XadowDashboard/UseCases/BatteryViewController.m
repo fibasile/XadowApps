@@ -34,7 +34,7 @@
         
         self.firmata = [[XadowFirmata alloc] initWithUART:uart];
         [self.firmata startLoop];
-        [self.firmata queryBattery:^(uint8_t chargeStatus, uint8_t charge) {
+        [self.firmata queryBattery:^(uint8_t chargeStatus, float charge) {
         
             
             NSString* statusString = @"reading...";
@@ -54,7 +54,7 @@
             
             self.statusLabel.text = statusString;
             
-            self.chargeLabel.text = [NSString stringWithFormat:@"%d",charge];
+            self.chargeLabel.text = [NSString stringWithFormat:@"%0.2f v",charge];
             
         }];
         

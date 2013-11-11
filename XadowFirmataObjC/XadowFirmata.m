@@ -19,6 +19,24 @@
 #define CLEAR_DISPLAY           0x03
 #define UPDATE_DISPLAY          0x04
 #define QUERY_BATTERY           0x05
+#define TOGGLE_ACCEL            0x06
+#define REPORT_ACCEL            0x07
+#define REPORT_ACCEL_EVT        0x08
+#define SET_TIME                0x09
+#define DISPLAY_TIME            0x10
+
+
+
+
+#define MON 1
+#define TUE 2
+#define WED 3
+#define THU 4
+#define FRI 5
+#define SAT 6
+#define SUN 7
+
+
 
 @interface XadowFirmata ()
 
@@ -27,8 +45,8 @@
 @property (nonatomic,strong)NSMutableData* receivedBuffer;
 @property (nonatomic,assign)int executeMultiByteCommand;
 @property (nonatomic,strong) void (^queryLedBlock)(BOOL enabled);
-@property (nonatomic,strong) void (^chargeBlock)(uint8_t chargeStatus, uint8_t charge);
-
+@property (nonatomic,strong) void (^chargeBlock)(uint8_t chargeStatus, float charge);
+@property (nonatomic,strong) void (^accelBlock)(uint8_t accel_event);
 @end
 
 @implementation XadowFirmata
@@ -172,16 +190,26 @@
         
         
     } else if (firstByte == QUERY_BATTERY) {
+        int count = self.receivedBuffer.length;
         UInt8 allBytes[5];
         [data getBytes:allBytes length:5];
         __block uint8_t chargeStatus = (allBytes[1] & 0x7F) | (allBytes[2]& 0x7F  << 7 );
         __block uint8_t charge = (allBytes[3] & 0x7F) | (allBytes[4]& 0x7F  << 7 ) ;
-        
+//
+//        uint8_t chargeStatus = allBytes[1];
+        float fcharge = charge/10.0f;
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.chargeBlock(chargeStatus,charge);
+            self.chargeBlock(chargeStatus,fcharge);
         });
         
-        
+    } else if (firstByte == REPORT_ACCEL_EVT) {
+        UInt8 secondByte[2];
+        [data getBytes:secondByte length:2];
+        __block uint8_t byte = secondByte[1];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (self.accelBlock)
+                self.accelBlock(byte);
+        });
         
         
     }else {
@@ -248,11 +276,32 @@
 //    free(buf);
 }
 
-- (void) queryBattery:(void(^)(uint8_t chargeStatus, uint8_t charge))chargeVlock{
+- (void) queryBattery:(void(^)(uint8_t chargeStatus, float charge))chargeVlock{
     self.chargeBlock = chargeVlock;
     uint8_t buf[3] = { START_SYSEX, QUERY_BATTERY, END_SYSEX };
     [self.uart write:buf length:3];
 
+}
+- (void)queryAccelerometer:(void(^)(uint8_t accel_event))accelBlock {
+    self.accelBlock = accelBlock;
+}
+- (void)toggleAccelerometer:(BOOL)onOff {
+    uint8_t buf[4] = { START_SYSEX, REPORT_ACCEL, onOff, END_SYSEX };
+    [self.uart write:buf length:4];
+    if (!onOff){
+        self.accelBlock = nil;
+    }
+    
+}
+- (void)setTimeWithYear:(int)year month:(int)month day:(int)day weekDay:(int)weekDay hour:(int)hour minutes:(int)minutes seconds:(int)seconds {
+    uint8_t buf[10] = { START_SYSEX, SET_TIME, year, month, day, weekDay, hour, minutes, seconds, END_SYSEX };
+    [self.uart write:buf length:10];
+    
+}
+- (void)displayTime {
+    uint8_t buf[3] = { START_SYSEX, DISPLAY_TIME, END_SYSEX };
+    [self.uart write:buf length:3];
+    
 }
 
 
